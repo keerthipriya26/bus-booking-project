@@ -1,0 +1,7 @@
+travels/venv/
+travels/__pycache__/
+travels/**/__pycache__/
+travels/db.sqlite3
+*.pyc
+*.pyo
+.env

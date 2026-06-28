@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  django-backend:
+    build:
+      context: ./travels_django
+      dockerfile: Dockerfile
+    container_name: bus-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DJANGO_SECRET_KEY=your-secret-key-here
+    volumes:
+      - sqlite_data:/app/db.sqlite3
+    networks:
+      - bus-network
+    restart: unless-stopped
+
+  react-frontend:
+    build:
+      context: ./travels_react
+      dockerfile: Dockerfile
+    container_name: bus-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - django-backend
+    networks:
+      - bus-network
+    restart: unless-stopped
+
+networks:
+  bus-network:
+    driver: bridge
+
+volumes:
+  sqlite_data:

@@ -1,0 +1,23 @@
+# Django
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Virtual environment
+pk_django_venv/
+
+# Environment variables
+.env
+
+# React / Node
+node_modules/
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
