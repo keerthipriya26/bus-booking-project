@@ -69,7 +69,12 @@ pipeline {
                         --name bus-backend \\
                         --network bus-network \\
                         -p 8000:8000 \\
+                        -v bus-db:/app \\
                         ${BACKEND_IMAGE}:latest
+
+                    sleep 5
+
+                    docker exec bus-backend python manage.py migrate
 
                     docker run -d \\
                         --name bus-frontend \\
