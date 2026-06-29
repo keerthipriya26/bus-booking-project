@@ -14,7 +14,7 @@ const UserBookings = ({token, userId}) => {
                 return
             }
             try{
-                const response = await axios.get(`http://localhost:8000/api/user/${userId}/bookings/`,
+                const response = await axios.get(`/api/user/${userId}/bookings/`,
                     {
                         headers:{
                             Authorization : `Token ${token}`
@@ -37,7 +37,7 @@ const UserBookings = ({token, userId}) => {
         if(!window.confirm('Are you sure you want to cancel this booking?')) return
         setCancellingId(bookingId)
         try {
-            await axios.delete(`http://localhost:8000/api/booking/${bookingId}/cancel/`, {
+            await axios.delete(`/api/booking/${bookingId}/cancel/`, {
                 headers: { Authorization: `Token ${token}` }
             })
             setBookings(prev => prev.filter(b => b.id !== bookingId))

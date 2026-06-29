@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ntvrfeiw24zm6u+#dexd$$katol*)9yi^bvazi#5^e%a&8@68f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -66,11 +66,12 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'http://13.127.142.141',
 ]
 
-CORS_ALLOW_ALL_ORIGINS: True
-CORS_ALLOW_CREDENTIALS: True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'travels.urls'
 

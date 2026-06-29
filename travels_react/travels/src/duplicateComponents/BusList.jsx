@@ -9,7 +9,7 @@ const BusList = () => {
     useEffect(()=> {
         const fetchBuses = async() => {
             try {
-                const response = await axios.get('http://localhost:8000/api/buses/')
+                const response = await axios.get(`/api/buses/`)
                 setBus(response.data)
             } catch (error) {
                 console.log('Error in fetching Buses', error)

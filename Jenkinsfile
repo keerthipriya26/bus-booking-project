@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USERNAME = 'YOUR_DOCKERHUB_USERNAME'   // replace this
+        DOCKERHUB_USERNAME = 'kee26'
         BACKEND_IMAGE  = "${DOCKERHUB_USERNAME}/bus-backend"
         FRONTEND_IMAGE = "${DOCKERHUB_USERNAME}/bus-frontend"
         IMAGE_TAG      = "${BUILD_NUMBER}"
