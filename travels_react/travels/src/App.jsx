@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import RegisterForm from "./duplicateComponents/RegisterForm";
-import LoginForm from "./duplicateComponents/loginForm";
+import LoginForm from "./duplicateComponents/LoginForm";
 
 import { Route, Routes } from "react-router-dom";
 import BusList from "./duplicateComponents/BusList";
